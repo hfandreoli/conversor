@@ -9,11 +9,11 @@ public class NewtonKilogramConverter extends AbstractConverter {
 
     @Override
     public double toBasicUnit(double value) {
-        return value * 0.10197;
+        return value * 9.80665;
     }
 
     @Override
     public double fromBasicUnit(double value) {
-        return value * 9.80665;
+        return value * 0.10197;
     }
 }

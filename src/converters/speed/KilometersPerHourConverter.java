@@ -9,11 +9,11 @@ public class KilometersPerHourConverter extends AbstractConverter {
 
     @Override
     public double toBasicUnit(double value) {
-        return value * 3.6;
+        return value * 0.277778;
     }
 
     @Override
     public double fromBasicUnit(double value) {
-        return value * 0.277778;
+        return value * 3.6;
     }
 }

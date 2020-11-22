@@ -9,11 +9,11 @@ public class MilliliterConverter extends AbstractConverter {
 
     @Override
     public double toBasicUnit(double value) {
-        return value * 1000;
+        return value * 0.001;
     }
 
     @Override
     public double fromBasicUnit(double value){
-        return value * 0.001;
+        return value * 1000;
     }
 }

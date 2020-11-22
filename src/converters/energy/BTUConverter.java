@@ -9,11 +9,11 @@ public class BTUConverter extends AbstractConverter{
 
     @Override
     public double toBasicUnit(double value) {
-        return value * 1055.06;
+        return value * 0.000947817;
     }
 
     @Override
     public double fromBasicUnit(double value) {
-        return value * 0.000947817;
+        return value * 1055.06;
     }
 }

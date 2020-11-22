@@ -9,11 +9,11 @@ public class MilligramConverter extends AbstractConverter {
 
     @Override
     public double toBasicUnit(double value) {
-        return value * 1000000;
+        return value / 1000000;
     }
 
     @Override
     public double fromBasicUnit(double value) {
-        return value / 1000000;
+        return value * 1000000;
     }
 }

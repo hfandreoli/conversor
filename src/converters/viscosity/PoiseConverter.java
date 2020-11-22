@@ -4,16 +4,16 @@ import converters.AbstractConverter;
 
 public class PoiseConverter extends AbstractConverter{
     public PoiseConverter() {
-        super("cP");
+        super("P");
     }
 
     @Override
     public double toBasicUnit(double value) {
-        return value * 10;
+        return value * 0.1;
     }
 
     @Override
     public double fromBasicUnit(double value) {
-        return value * 0.1;
+        return value * 10;
     }
 }
