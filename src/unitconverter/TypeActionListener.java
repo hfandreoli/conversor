@@ -8,6 +8,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class TypeActionListener implements ActionListener {
     private final JComboBox<MeasureType> typeComboBox;
@@ -22,7 +24,6 @@ public class TypeActionListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.out.println(e.getActionCommand());
         if (!e.getActionCommand().equals("comboBoxChanged")) {
             return;
         }
@@ -36,17 +37,25 @@ public class TypeActionListener implements ActionListener {
 
         String[] fileList = new File("C:\\repos\\java\\conversor\\src\\converters\\" + packageName).list();
         if (fileList != null) {
+
+            ArrayList<AbstractConverter> converterList = new ArrayList<>();
             for (String file : fileList) {
                 try {
 
                     String className = file.substring(0, file.indexOf("."));
                     AbstractConverter converter = (AbstractConverter) Class.forName("converters." + packageName + "." + className).getDeclaredConstructor().newInstance();
-                    fromComboBox.addItem(converter);
-                    toComboBox.addItem(converter);
+                    converterList.add(converter);
 
                 } catch (InstantiationException | ClassNotFoundException | NoSuchMethodException | IllegalAccessException | InvocationTargetException instantiationException) {
                     instantiationException.printStackTrace();
                 }
+            }
+
+            Collections.sort(converterList);
+
+            for (AbstractConverter converter : converterList) {
+                fromComboBox.addItem(converter);
+                toComboBox.addItem(converter);
             }
         }
     }

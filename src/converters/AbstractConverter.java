@@ -1,6 +1,6 @@
 package converters;
 
-public abstract class AbstractConverter {
+public abstract class AbstractConverter implements Comparable<AbstractConverter>{
     private final String unitName;
 
     public AbstractConverter(String unitName){
@@ -13,5 +13,10 @@ public abstract class AbstractConverter {
     @Override
     public String toString() {
         return unitName;
+    }
+
+    @Override
+    public int compareTo(AbstractConverter o) {
+        return unitName.compareTo(o.unitName);
     }
 }

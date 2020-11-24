@@ -7,7 +7,7 @@ public enum MeasureType {
     MASS("mass", "kilogram (kg)", "Mass"),
     TIME("time", "second (s)", "Time"),
     SPEED("speed", "m/s", "Speed"),
-    ACCELERATION("accelerations", "m/s\u00b2", "Accelaration"),
+    ACCELERATION("acceleration", "m/s\u00b2", "Accelaration"),
     FORCE("force", "newton (N)", "Force"),
     PRESSURE("pressure", "pascal (Pa)", "Pressure"),
     ENERGY("energy", "joule (J)", "Energy"),
