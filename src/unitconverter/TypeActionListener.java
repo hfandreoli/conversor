@@ -35,7 +35,7 @@ public class TypeActionListener implements ActionListener {
         assert selectedType != null;
         String packageName = selectedType.getTypeString();
 
-        String[] fileList = new File("C:\\repos\\java\\conversor\\src\\converters\\" + packageName).list();
+        String[] fileList = new File("/Users/victorspolaor/Desktop/dev-projects/git-repos/conversor/src/converters/" + packageName).list();
         if (fileList != null) {
 
             ArrayList<AbstractConverter> converterList = new ArrayList<>();
